@@ -28,7 +28,7 @@ body{
 img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 .container{
     /* padding-block: .5em; */
@@ -52,9 +52,8 @@ header{
     margin-bottom: 5em;
 }
 .logo{
-    height: 30px;
-    overflow: hidden;
-    line-height: 50px;
+    height: auto;
+    width:79.9px;
 }
 .arrow{
     width: 20px;
@@ -69,7 +68,7 @@ header{
 }
 nav{
     display: flex;
-    gap: 25px;
+    gap: 10px;
     align-items: center;
 }
 .sub-main{
@@ -90,19 +89,19 @@ padding: 1.5em;
     gap: 12px;
 }
 .sub-main form input:first-of-type{
-    padding: .8em 1.2em;
+    padding: 1em 1.2em;
     border: 1px solid var(--neuLG);
     outline: none;
     background: transparent;
 }
 .sub-main form input:last-of-type{
-    padding: .8em 1.2em;
+    padding:1em 1.2em;
     outline: none;
     border: none;
     background: var(--secBB);
     color: var(--neuLGB);
     border-radius: 5px;
-    height: 3em;
+    height: 4em;
 }
 .main{
     grid-area:main;
@@ -116,38 +115,45 @@ padding: 1.5em;
 .main .grid{
     margin-top: 4em;
 }
-.main .grid div:first-child{
+/* .main .grid div:first-child {
     margin-bottom: 5em;
-}
+} */
 .grid h1{
     font-size: 1em;
     text-align: center;
     margin-bottom: 1em;
 }
 
-.grid div:last-child .link{
+.grid div:last-child >.link{
+    width: 183px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    gap: 12px;
-    position: relative;
+    flex-direction: column;
     margin-top: 1em;
+    position: relative;
     margin-bottom: 2em;
     
 }
-.grid div:last-child .link:after{
+.grid div:last-child > .link:after{
     content: "";
     position: absolute;
     border-bottom: 2px solid var(--secMC);
-    width: 49%;
+    width: 90%;
     height: 2px;
     border-radius: 12px;
     bottom: 0;
 }
-.grid div:last-child >.link a:hover,
-.grid div:last-child .link:after,
-.arrow{
+.grid div:last-child>.link::after(:hover){
+    border-color: lightgreen;
+}
+.link div:first-child{
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+.grid div:last-child >.link a:hover{
     color:lightgreen;
 }
 .grid div:last-child .link a{
@@ -216,7 +222,7 @@ form input:first-of-type{
     font-weight: 600
 }
 form input:last-of-type{
-    padding: .8em 1.7em;
+    padding: 1em 1.7em;
     border: none;
     outline: none;
     border-radius: 5px;
@@ -292,31 +298,26 @@ i img{
 filter: hue-rotate(red);
 }
 .social ul li > .insta{
-    width: 20px;
-    height: 20px;
-    line-height: 30px;
+    width: 22px;
+    height: 22px;
 }
 .social ul li:nth-child(3){
-    position: relative;
-}
-.social ul li:nth-child(3){
-    content: "";
     width: 27px;
     height: 27px;
-    position: absolute;
-    border: 2px solid white;
+    border: 1px solid white;
     border-radius: 50%;
-    right: 97px;
-    line-height: 32px;
-    text-align: center;
+    line-height: 34px;
+    padding-left: 2px;
 }
-
 @media (min-width:900px){
     h1{
         font-size: 2em;
     }
     header{
         padding: 0 8em;
+    }
+    nav{
+        gap: 25px;
     }
     .sub-main{
         display:grid;
@@ -347,6 +348,7 @@ filter: hue-rotate(red);
     }
         .sub-main form input:first-of-type{
             width: 55%;
+            padding: 1.2em 1.2em;
         }
                 .sub-main form input:last-of-type{
                     width: 30%;
@@ -374,7 +376,7 @@ filter: hue-rotate(red);
     .main .grid div:first-child{
         grid-column: 2;
         grid-row: 1;
-        margin-left: 2em;
+        /* margin-left: 2em; */
         width: 32em;
         margin-bottom: 0;
     }
@@ -385,10 +387,21 @@ filter: hue-rotate(red);
         grid-row: 1;
     }
     .grid div:last-child .link{
-        justify-content: start;
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+        width: 183px;
     }
-    .grid div:last-child .link:after{
-        width: 11em;
+        .link div:first-child{
+            margin: 0;
+        }
+        .link .line{
+            text-align: center;
+        }
+    .grid div:last-child >.link:after{
+        width: 90%;
+        left: 0;
+        margin-left: auto;
     }
     .grid .card{
         padding: 1em;
