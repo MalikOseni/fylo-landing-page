@@ -100,7 +100,7 @@ padding: 1.5em;
     border: none;
     background: var(--secBB);
     color: var(--neuLGB);
-    border-radius: 5px;
+    border-radius: 2px;
     height: 4em;
 }
 .main{
@@ -225,7 +225,7 @@ form input:last-of-type{
     padding: 1em 1.7em;
     border: none;
     outline: none;
-    border-radius: 5px;
+    border-radius: 2px;
     background-color: var(--secBB);
     color: var(--neuLGB);
     width: 22em;
